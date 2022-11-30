@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<% let location = '' %>
+    <h1>Edit Item</h1>
+    <form action=<%= `/` %> id='form' method="POST">
+        <label>Item</label>
+            <input type="text" name="item" value="<%=item.item%>" required>
+        <label>Quantity</label>
+            <input type="number" name="quantity" value="<%=item.quantity%>" required>
+        <label>Expires On</label>
+            <input type="date" name="expiration" value="<%=item.expiration%>">
+        <label>Location</label>
+            <select name="location" id='location' value="<%=item.location%>" required>
+                <option value=""></option>
+                <option value="Fridge">Fridge</option>
+                <option value="Freezer">Freezer</option>
+                <option value="Pantry">Pantry</option>
+                <option value="Supplies">Supplies</option>
+            </select>
+        <label>Category</label>
+            <select name="category" id="category" value="<%=item.category%>" required></select>
+        <input type="submit" value="Submit">
+    </form>
+
+<%- include('../partials/footer') %>

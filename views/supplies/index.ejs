@@ -1,0 +1,52 @@
+<%- include('../partials/header') %>
+
+<h1>Supplies</h1>
+<table>
+    <label>General</label>
+    <% items.forEach(function(i) { %>
+        <% if (i.category === 'General') { %>
+            <form action="/items/<%= i.id %>?_method=DELETE"
+                id="delete-form" method="POST">
+                <button type='submit'>X</button>
+            </form>
+            <form action="/items/<%= i.id %>/edit?_method=GET"
+                id="edit-form" method="POST">
+                <button type='submit'>?</button>
+            </form>
+            <%= i.item %> -
+            <%= i.quantity %> -
+        <% } %>
+    <% }) %>
+    <label>Cleaning</label>
+    <% items.forEach(function(i) { %>
+        <% if (i.category === 'Cleaning') { %>
+            <form action="/items/<%= i.id %>?_method=DELETE"
+                id="delete-form" method="POST">
+                <button type='submit'>X</button>
+            </form>
+            <form action="/items/<%= i.id %>/edit?_method=GET"
+                id="edit-form" method="POST">
+                <button type='submit'>?</button>
+            </form>
+            <%= i.item %> -
+            <%= i.quantity %> -
+        <% } %>
+    <% }) %>
+    <label>Other</label>
+    <% items.forEach(function(i) { %>
+        <% if (i.category === 'Other') { %>
+            <form action="/items/<%= i.id %>?_method=DELETE"
+                id="delete-form" method="POST">
+                <button type='submit'>X</button>
+            </form>
+            <form action="/items/<%= i.id %>/edit?_method=GET"
+                id="edit-form" method="POST">
+                <button type='submit'>?</button>
+            </form>
+            <%= i.item %> -
+            <%= i.quantity %> -
+        <% } %>
+    <% }) %>
+</table>
+
+<%- include('../partials/footer') %>
