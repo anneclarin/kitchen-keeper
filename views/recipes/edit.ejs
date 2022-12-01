@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<h1>Edit Recipe</h1>
+<form action='/recipes/<%= recipe.id %>/update?_method=PUT' id="form" class="recipeUpdate" method="POST">
+    <label>Name</label>
+        <input type="text" name="name" value="<%= recipe.name %>" required>
+    <label>Serving Size</label>
+        <input type="number" name="servingSize" value="<%= recipe.name %>" >
+    <label>Instructions</label>
+        <input type="text" name="instructions" value="<%= recipe.name %>" required>
+    <!-- <label>Comments</label>
+        <input type="text" name="comments"> -->
+    <input type="submit" value="Submit">
+</form>
+
+<%- include('../partials/footer') %>

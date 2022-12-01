@@ -1,14 +1,14 @@
 <%- include('../partials/header') %>
 
     <h1>Recipes</h1>
-    <% recipes.forEach(function(r) { %>
-        <%= r.name %>
-        <%= r.ingredients %>
-        <%= r.serving-size %>
-        <%= r.instructions %>
-        <form action="/items/<%= i.id %>?_method=DELETE"
-            id="delete-form" method="POST">
-            <button type='submit'>X</button>
-    <% }) %>
+    <div class="recipe-container">
+        <% recipes.forEach(function(r) { %>
+            <div class="recipe">
+                <a href="/recipes/<%=r.id%>">
+                    <%= r.name %>
+                </a>
+            </div>
+        <% }) %>
+    </div>
 
 <%- include('../partials/footer') %>

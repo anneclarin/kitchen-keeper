@@ -1,8 +1,7 @@
 <%- include('../partials/header') %>
 
-<% let location = '' %>
     <h1>Edit Item</h1>
-    <form action=<%= `/` %> id='form' method="POST">
+    <form action='/items/<%= item.id %>/update?_method=PUT' id='form' class='update' method="POST">
         <label>Item</label>
             <input type="text" name="item" value="<%=item.item%>" required>
         <label>Quantity</label>

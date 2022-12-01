@@ -35,7 +35,7 @@ function deleteItem(req, res) {
 
 function edit(req, res) {
     Item.findById(req.params.id, function(err, item) {
-        res.render('edit/index', {title: 'Edit Item', item})
+        res.render('edit/edit', {title: 'Edit Item', item})
     })
 };
 

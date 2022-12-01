@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <% let location = '' %>
     <h1>Add Item</h1>
-    <form action=<%= `` %> id='form' method="POST">
+    <form action='' id='form' class='new'  method="POST">
         <label>Item</label>
             <input type="text" name="item" required>
         <label>Quantity</label>
@@ -20,5 +20,4 @@
             <select name="category" id="category" required></select>
         <input type="submit" value="Submit">
     </form>
-
 <%- include('../partials/footer') %>
