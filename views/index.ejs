@@ -3,26 +3,12 @@
   <section class="main-page">
     <h1><%= title %></h1>
   </section>
-  <div>
-    <nav class="tempbar">
-      <ul>
-        <li class="nav-item">
-          <a href="/items/Fridge">Fridge</a>
-        </li>
-        <li class="nav-item">
-          <a href="/items/Freezer">Freezer</a>
-        </li> 
-        <li class="nav-item">
-          <a href="/items/Pantry">Pantry</a>
-        </li> 
-        <li class="nav-item">
-          <a href="/items/Supplies">Supplies</a>
-        </li>
-        <li class="nav-item">
-          <a href="/recipes">Recipes</a>
-        </li> 
-      </ul>
-</nav>
+  <div class="kitchen-container">
+          <a class="kitchen-fridge" href="/items/Fridge">Fridge</a>
+          <a class="kitchen-freezer" href="/items/Freezer">Freezer</a>
+          <a class="kitchen-pantry" href="/items/Pantry">Pantry</a>
+          <a class="kitchen-supplies" href="/items/Supplies">Supplies</a>
+          <a class="kitchen-recipes" href="/recipes">Recipes</a>
   </div>
 
 <%- include('partials/footer') %>
