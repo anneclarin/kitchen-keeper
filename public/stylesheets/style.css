@@ -166,6 +166,7 @@ h2 {
 }
 .kitchen-fridge, .kitchen-freezer {
   grid-column: 1 / 2;
+  background-color: #C0C0C0;
 }
 .kitchen-fridge {
   grid-row: 1 / 3;
