@@ -11,7 +11,7 @@ module.exports = {
 
 function index(req, res) {
     Item.find({location: req.params.location}, function(err, results) {
-        res.render(`${req.params.location}/index`, {items: results})
+        res.render(`${req.params.location.toLowerCase()}/index`, {items: results})
     })
   };
 
