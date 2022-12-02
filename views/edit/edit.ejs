@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-    <h1>Edit Item</h1>
+    <h1 class="edit-item">Edit Item</h1>
     <form action='/items/<%= item.id %>/update?_method=PUT' id='form' class='update' method="POST">
         <label>Item</label>
             <input type="text" name="item" value="<%=item.item%>" required>
@@ -18,7 +18,7 @@
             </select>
         <label>Category</label>
             <select name="category" id="category" value="<%=item.category%>" required></select>
-        <input type="submit" value="Submit">
+            <button type='submit' class="add">Finished Editing</button>
     </form>
 
 <%- include('../partials/footer') %>

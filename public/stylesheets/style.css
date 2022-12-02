@@ -1,5 +1,5 @@
 body {
-  font-size: 14px;
+  font-size: 18px;
   font-family: 'Shadows Into Light Two', cursive;
 }
 
@@ -16,14 +16,22 @@ h1 {
   text-align: center;
   color: #C0C0C0;
 }
-.navbar {
-  display: flex;
-  justify-content: space-around; 
-}
-.tempbar > ul{
-  list-style-type: none;
+.navbar, .locationbar > ul {
   display: flex;
   justify-content: space-around;
+  margin: 0 auto;
+  padding: 2px;
+}
+.navbar{
+  background-color: #6DBDE6;
+}
+.navbar > a, .locationbar > ul > li > a {
+  color: white;
+}
+.locationbar > ul {
+  list-style-type: none;
+  background-color: #F39883;
+  margin-bottom: 20px;
 }
 a > #edit-form {
   text-decoration: none;
@@ -31,7 +39,7 @@ a > #edit-form {
 .table {
   border: 1px solid #767676;
   display: grid;
-  width: 1100px;
+  width: 1350px;
   height: 600px;
   justify-content: center;
   align-items: center;
@@ -119,7 +127,7 @@ h1.odd, h1.even {
   background-color: #F39883;
   transform: rotate(340deg);
 }
-h2 {
+.h2-item {
   background-color: #C0C0C0;
   color: white;
   text-align: center;
@@ -186,4 +194,31 @@ h2 {
 .kitchen-pantry {
   grid-column: 3 / 4;
   grid-row: 1 / 4;
+}
+.h1-recipe {
+  color: #6DBDE6
+}
+.h2-recipe, .recipe-show > h3 {
+color: #F39883
+}
+.add, .delete {
+  background-color: #6DBDE6;
+  color: white;
+  border: 1px solid #6DBDE6;
+  box-shadow: 2px 2px #00B7FF;
+  margin: 10px;
+}
+.add-recipe, .add-item, .edit-item {
+  color: #6DBDE6;
+}
+#addRecipe, #form {
+  color: #F39883;
+}
+@media(hover:hover) { 
+  .add:hover, .delete:hover {
+  background-color: #F39883;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px #767676;
+  }
 }

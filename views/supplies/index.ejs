@@ -13,7 +13,7 @@
     <div class="table" id="supplies-body">
         <div class="row">
             <section class="cell">
-                <h2>General</h2>
+                <h2 class="h2-item">General</h2>
                     <ul>
                         <% items.forEach(function(i) { %>
                             <% if (i.category === 'General') { %>
@@ -34,7 +34,7 @@
                     </ul>
             </section>
             <section class="cell">
-                <h2>Cleaning</h2>
+                <h2 class="h2-item">Cleaning</h2>
                     <ul>
                         <% items.forEach(function(i) { %>
                             <% if (i.category === 'Cleaning') { %>
@@ -57,7 +57,7 @@
         </div>
         <div class="row">
             <section class="cell">
-                <h2>Other</h2>
+                <h2 class="h2-item">Other</h2>
                     <ul>
                         <% items.forEach(function(i) { %>
                             <% if (i.category === 'Other') { %>

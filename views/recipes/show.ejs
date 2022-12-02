@@ -1,57 +1,58 @@
 <%- include('../partials/header') %>
 
-<h1><%=recipe.name%></h1>
+    <h1 class="h1-recipe"><%=recipe.name%></h1>
 
-<h2>Ingredients</h2>
-    <ul>
-        <% recipe.ingredients.forEach(ingredient => { %>
-            <li>
-                <%=ingredient.item%>
-                <%=ingredient.quantity%>
-                <%=ingredient.measurement%>
-            </li>
-        <% }) %>
-    </ul>
-<h2>Details</h2>
-<p>Serving Size: <%=recipe.servingSize%><p>
-<h3>Instructions</h3>
-<%=recipe.instructions%>
-<h3>Comments</h3>
-    <ul>
-        <% recipe.comments.forEach(comment => { %>
-            <li>
-                <%=comment.madeOn%>
-                <%=comment.comment%>
-            </li>
-        <% }) %>
-    </ul>
-
-<h2>Add Ingredient</h2>
-<form action="/recipes/<%=recipe.id%>/ingredients" id="add-ingredient" class="add-ingredient" method="POST">
-    <select name="item" >
-        <% items.forEach(item => { %>         
-            <option value="<%= item.id %>"><%= item.item %></option>
+    <h2 class="h2-recipe">Ingredients</h2>
+        <ul>
+            <% recipe.ingredients.forEach(ingredient => { %>
+                <li>
+                    <%=ingredient.item.item%> -
+                    <%=ingredient.quantity%>
+                    <%=ingredient.measurement%>
+                </li>
             <% }) %>
-        </select>
-    <input type="number" name="quantity">
-    <input type="text" name="measurement">
-    <input type="submit" value="Submit">
-</form>
+        </ul>
+    <h2 class="h2-recipe">Details</h2>
+    <p>Serving Size: <%=recipe.servingSize%><p>
+    <h3>Instructions</h3>
+    <%=recipe.instructions%>
+    <h3>Comments</h3>
+        <ul>
+            <% recipe.comments.forEach(comment => { %>
+                <li>
+                    Made On: <%=comment.madeOn.toLocaleDateString()%> -
+                    Thoughts: <%=comment.comment%>
+                </li>
+            <% }) %>
+        </ul>
 
-<h2>Add Comment</h2>
-<form action="/recipes/<%=recipe.id%>/comments" id="add-comment" class="add-comment" method="POST">
-    <input type="date" name="madeOn">
-    <input type="text" name="comment">
-    <input type="submit" value="Submit">
-</form>
+    <h2 class="h2-recipe">Add Ingredient</h2>
+    <form action="/recipes/<%=recipe.id%>/ingredients" id="add-ingredient" class="add-ingredient" method="POST">
+        <label>Ingredient:</label>
+            <select name="item" >
+                <% items.forEach(item => { %>         
+                    <option value="<%= item.id %>"><%= item.item %></option>
+                    <% }) %>
+                </select>
+        <label>Quantity:</label>
+            <input type="number" name="quantity" autocomplete="off">
+        <label>Measurement:</label>
+            <input type="text" name="measurement">
+        <button type='submit' class="add">Add Ingredient</button>
+    </form>
 
-  <form action="/recipes/<%= recipe.id %>?_method=DELETE"
-            id="delete-form" method="POST">
-            <button type='submit'>Delete</button>
-        </form>
-    <a href="/recipes/<%= recipe.id %>/edit"
-        id="recipe-edit-form">
-        <button type='submit'>Edit</button>
-    </a>
+    <h2 class="h2-recipe">Add Comment</h2>
+    <form action="/recipes/<%=recipe.id%>/comments" id="add-comment" class="add-comment" method="POST">
+        <label>Made On:</label>
+            <input type="date" name="madeOn" autocomplete="off">
+        <label>Thoughts:</label>
+            <input type="text" name="comment" autocomplete="off">
+        <button type='submit' class="add">Add Comment</button>
+    </form>
+
+    <form action="/recipes/<%= recipe.id %>?_method=DELETE"
+                id="delete-form" method="POST">
+                <button type='submit' class="delete">Delete Recipe</button>
+    </form>
 
 <%- include('../partials/footer') %>
